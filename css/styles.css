@@ -1,0 +1,417 @@
+* {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    text-align: center;
+}
+
+@font-face {
+    font-family: shapel;
+    src: url(Shapel1Longer-Regular.ttf);
+}
+
+html, body {
+    height: 100%;
+    font-family: "Lucida Sans", "Lucida Sans Regular", 'Lucida Grande', 
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(198, 236, 154);
+}
+
+#container {
+    display: flex;
+    height: 100vh;
+}
+
+#game {
+    width: 100%;
+    max-width: 45vh;
+    height: 100%;
+    flex-direction: column;
+}
+
+/* If the width is greater than the height (i.e. landscape). */
+@media (min-width:100vh) {
+    #game {max-width: 80vh}
+}
+
+header {
+    margin-top: 2vh;
+    height: 12vh;
+    border-bottom: 1px solid rgb(58, 58, 60);
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#board-container {
+    display: flex;
+    height: 44vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 0vh;
+    padding-bottom: 1vh;
+}
+
+#board, #results-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-row-gap: 2vh;
+    grid-column-gap: 0.5vh;
+    box-sizing: border-box;
+}
+
+/* If the width is greater than the height (i.e. landscape). */
+@media (min-width:100vh) {
+    #board-container {height: 55vh}
+    #board {grid-row-gap: 3vh;}
+}
+
+#results {
+    display: flex;
+    height: 17vh;
+    justify-content: top;
+    align-items: top;
+    overflow: hidden;
+    border-top: 1px solid rgb(58, 58, 60);
+    padding-top: 1vh;
+}
+
+#stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 10vh;
+    justify-content: top;
+    align-items: top;
+    overflow: hidden;
+    width: 100%;
+}
+
+#controls {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 5vh;
+    text-align: center;
+    align-items: top;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 3vh;
+}
+
+.stats div, .stats button {
+    padding: 0vh;
+}
+
+.small, .high, .low, .logo-small, .logo-low, .logo-high {
+    width: 4vh;
+    height: 4vh;
+    font-size: 7vh;
+    color: rgb(24, 40, 37);
+    border: 2px solid rgb(58, 58, 60);
+    border-radius: 4px;
+    text-transform: lowercase;
+    font-family: shapel;
+    line-height: 4.5vh;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.small, .logo-small {
+    background-color: rgb(15, 230, 222);
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+.high, .logo-high {
+    background-color: rgb(243, 23, 209);
+    padding-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+.low, .logo-low {
+    background-color: rgb(147, 105, 213);
+    margin-top: 4vh;
+    padding-bottom: 4vh;
+}
+
+/* If the width is greater than the height (i.e. landscape). */
+@media (min-width:100vh) {
+    .small, .high, .low {
+        font-size: 8vh;
+        line-height: 5.5vh;
+        width: 5vh;
+        height: 5vh;
+    }
+
+    .small {
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+    .high {
+        padding-top: 5vh;
+        margin-bottom: 5vh;
+    }
+    .low {
+        margin-top: 5vh;
+        padding-bottom: 5vh;
+    }
+}
+
+.logo-small, .logo-low, .logo-high {
+    line-height: 3.5vh;
+    width: 3vh;
+    height: 3vh;
+    font-size: 5vh;
+}
+
+.logo-small {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+.logo-high {
+    padding-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+.logo-low {
+    margin-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+#phone-kb, #desktop-kb {
+    border-top: 1px solid rgb(58, 58, 60);
+    padding-top: 3vh;
+    height: 20vh;
+    position: relative;
+}
+
+#desktop-kb {
+    display:none;
+}
+/* If the width is greater than the height (i.e. landscape). */
+@media (min-width:100vh) {
+    #desktop-kb {display:block}
+    #phone-kb {display:none}
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto 0.8vh;
+    touch-action: manipulation;
+}
+
+.keyboard-row button {
+    font-family: shapel;
+    font-size: 4.5vh;
+    font-weight: 200;
+    border: 2px solid rgb(58, 58, 60);
+    cursor: pointer;
+    text-transform: lowercase;
+    margin-left: 0.3vh;
+    margin-right: 0.3vh;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.small-button {
+    background-color: rgb(15, 230, 222);
+    color: rgb(24, 40, 37);
+    height: 5vh;
+    width: 5vh;
+    line-height: 0;
+}
+
+.high-button {
+    background-color: rgb(243, 23, 209);
+    color: rgb(24, 40, 37);
+    height: 8vh;
+    width: 5vh;
+    padding-top: 1vh;
+}
+
+.low-button {
+    background-color: rgb(147, 105, 213);
+    color: rgb(24, 40, 37);
+    height: 8vh;
+    width: 5vh;
+    padding-bottom: 1vh;
+    line-height: 4vh;
+}
+
+.keyboard-row button.delete-button, .keyboard-row button.submit-button {
+    margin-top: 0;
+    height: 8vh;
+    width: 5vh;
+    background-size: 4vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.keyboard-row button.delete-button {
+    background-image: url(images/NewDelete.png);
+    background-color: rgb(255, 59, 83);
+}
+
+.keyboard-row button.submit-button {
+    background-image: url(images/NewSubmit.png);
+    background-color: rgb(0, 245, 0);
+}
+
+button.post-game {
+    background-color: rgb(247, 169, 168);
+    display: block;
+    border: 2px solid rgb(58, 58, 60);
+    cursor: pointer;
+    margin-left: 3vh;
+    margin-right: 3vh;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.game-stats {
+    font-size: 2.5vh;
+}
+
+.info-container {
+    position: absolute;
+    float: right;
+}
+
+#info-button {
+    background-color: rgb(247, 169, 168);
+    /* font-family: shapel; */
+    height: 4vh;
+    width: 4vh;
+    font-size: 3vh;
+    font-weight: 200;
+    font-style: bold;
+    border: 2px solid rgb(58, 58, 60);
+    cursor: pointer;
+    text-transform: lowercase;
+    padding-left: 0.3vh;
+    padding-right: 0.3vh;
+    margin-left: 0.3vh;
+    margin-right: 0.3vh;
+    margin-top: 0vh;
+    border-radius: 4px;
+    user-select: none;
+    float: right;
+}
+
+.info-box {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 10vh; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.info-box-content {
+    text-align: center;
+    background-color: rgb(243, 218, 216);
+    border-radius: 4px;
+    max-width: min(80vh, 80vw);
+    margin: auto; /* 5vh; */
+    padding: 3vh;
+    border: 1px solid #888;
+    /* width: 80%; */
+}
+
+.info-box-content ul, .info-box-content li {
+    list-style-position: outside;
+    text-align: left;
+    margin-top: min(2vh, 4vw);
+    margin-bottom: min(1vh, 2vw);
+    margin-left: min(1vh, 2vw);
+}
+
+.info-box-content h3, .info-box-content p {
+    margin-bottom: min(2vh, 4vw);
+}
+
+.info-box-content li {
+    font-size: min(2vh, 4vw);
+}
+
+.info-box-content h3 {
+    font-size: min(3vh, 6vw);
+}
+
+.info-box-content p {
+    font-size: min(2.5vh, 5vw);
+}
+
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+#WrongPlace {
+    background-color: rgb(255, 209, 102);
+}
+
+#RightPlace {
+    background-color: rgb(255, 209, 102);
+}
+
+#NotInWord {
+    background-color: rgb(205, 245, 165);
+    color: rgb(190, 230, 150);
+    border: rgb(190, 230, 150);
+}
+
+#word-stats {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    font-size: 2vh;
+}
+
+.spacer-half {
+    flex-grow: 0;
+    border: 0.2vh solid rgb(58, 58, 60);
+    background-color: rgb(58, 58, 60);
+    margin-right: 0.6vh;
+}
+
+/*
+Colour ideas:
+- lavender: 237, 227, 233
+- vanilla: 238, 227, 171
+- rose: 243, 218, 216
+- coral: 224, 141, 121
+- tangerine: 255, 147, 79
+- orange: 24, 40, 37
+- bright green: 90, 255, 21
+- green: 43, 192, 22
+- avocado: 68, 118, 4
+- chamoisee (brown): 155, 126, 70
+- onyx: 50, 55, 59
+- navy: 27, 40, 69
+- gunmetal: 24, 40, 37
+*/

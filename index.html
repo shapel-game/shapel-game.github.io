@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shapel</title>
+
+    <script type="module" src="js/main.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <div id="container">
+        <div id="game">
+            <header>
+                <div class="info-container"><button id="info-button">i</button></div>
+                <div class="title-container">
+                    <div class="logo-small">s</div>
+                    <div class="logo-high">h</div>
+                    <div class="logo-small">a</div>
+                    <div class="logo-low">p</div>
+                    <div class="logo-small">e</div>
+                    <div class="logo-high">l</div>
+                </div>
+            </header>
+            
+            <!-- Hidden rules box -->
+            <div id="info-box" class="info-box">
+                <div class="info-box-content">
+                    <span class="close">&times;</span>
+                    <h3>How to play shapel</h3>
+                    <p>Guess a hidden word from its shape!</p>
+                    <ul>
+                        <li>The answer will be a <u>common Australian-English</u> word that is <u>not</u> a proper noun, acronym, or plural.</li>
+                        <li>Only letters with the correct shape can go in a slot, e.g. <b style="background-color: rgb(243, 23, 209);">_b_</b> in a tall slot, <b style="background-color: rgb(147, 105, 213);">_y_</b> in 
+                            a low slot and <b style="background-color: rgb(15, 230, 222);">_a_</b> in a small slot.</li>
+                        <li>A guess doesn't need to be a real word.</li>
+                        <li>Letters will change to <b style="background-color: rgb(255, 209, 102); border: 2px;">yellow</b> if they are <u>in the word</u> - sorry, no right-place clues here!</li>
+                        <li>If you get the <b style="background-color: rgb(90, 255, 21);">correct word</b>, your score will go up: 4pts for 1 guess, 3pts for 2 guesses, 2pts for 3 guesses.</li>
+                        <li>If you don't get the word, but you guessed something with all the right letters, you get 1 pity point.</li>
+                        <li>The 'number of words with this shape' clue is an estimation based on our custom word-list, you might know more words than the number says!</li>
+                        <li>There is a <b>new word</b> every day at midnight.</li>
+                        <!-- <u>2pm Australian time</u> (GMT+11). -->
+                    </ul>
+                </div>
+            </div>
+
+            <div id="word-stats">There are x words with this shape.</div>
+
+            <div id="board-container">
+                <div id="board"></div>
+            </div>
+            
+            <div id="replaceable-section">
+                <div id="phone-kb" class="keyboard-container">
+                    <div class="keyboard-row">
+                        <button data-key="a">a</button>
+                        <button data-key="c">c</button>
+                        <button data-key="e">e</button>
+                        <button data-key="i">i</button>
+                        <button data-key="m">m</button>
+                        <button data-key="n">n</button>
+                        <button data-key="o">o</button>
+                    </div>
+                    <div class="keyboard-row">
+                        <button data-key="r">r</button>
+                        <button data-key="s">s</button>
+                        <button data-key="u">u</button>
+                        <button data-key="v">v</button>
+                        <button data-key="w">w</button>
+                        <button data-key="x">x</button>
+                        <button data-key="z">z</button>
+                    </div>
+                    <div class="keyboard-row">
+                        <button data-key="b">b</button>
+                        <button data-key="d">d</button>
+                        <button data-key="f">f</button>
+                        <button data-key="h">h</button>
+                        <button data-key="k">k</button>
+                        <button data-key="l">l</button>
+                        <button data-key="t">t</button>
+                    </div>
+                    <div class="keyboard-row">
+                        <button data-key="del" class="delete-button"></button>
+                        <button data-key="g">g</button>
+                        <button data-key="j">j</button>
+                        <button data-key="p">p</button>
+                        <button data-key="q">q</button>
+                        <button data-key="y">y</button>
+                        <button data-key="enter" class="submit-button"></button>
+                    </div>
+                </div>
+                <div id="desktop-kb" class="keyboard-container">
+                    <div class="keyboard-row">
+                        <button data-key="a">a</button>
+                        <button data-key="c">c</button>
+                        <button data-key="e">e</button>
+                        <button data-key="i">i</button>
+                        <button data-key="m">m</button>
+                        <button data-key="n">n</button>
+                        <button data-key="o">o</button>
+                        <button data-key="r">r</button>
+                        <button data-key="s">s</button>
+                        <button data-key="u">u</button>
+                        <button data-key="v">v</button>
+                        <button data-key="w">w</button>
+                        <button data-key="x">x</button>
+                        <button data-key="z">z</button>
+                    </div>
+                    <div class="keyboard-row">
+                        <button data-key="del" class="delete-button"></button>
+                        <button data-key="b">b</button>
+                        <button data-key="d">d</button>
+                        <button data-key="f">f</button>
+                        <button data-key="h">h</button>
+                        <button data-key="k">k</button>
+                        <button data-key="l">l</button>
+                        <button data-key="t">t</button>
+                        <button data-key="g">g</button>
+                        <button data-key="j">j</button>
+                        <button data-key="p">p</button>
+                        <button data-key="q">q</button>
+                        <button data-key="y">y</button>
+                        <button data-key="enter" class="submit-button"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
