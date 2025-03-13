@@ -1,8 +1,15 @@
+@font-face {
+    font-family: info;
+    src: url(Avenir_Next.ttf);
+    /*src: url(Shapel1Longer-Regular.ttf);*/
+}
+
 * {
     margin: 0;
     padding: 0;
     justify-content: center;
     text-align: center;
+    font-family: info;
 }
 
 :root {
@@ -21,14 +28,37 @@
     --outlineCol: #3a3a3c;
     --textCol: #182825;
     --scoreTextCol: #e4f0ee;
-    --fontSizeMult: 1;
+    /*Set to: 1 for Custom Font, 0.8 for Avenir.*/
+    --fontSizeMult: 0.8;
+    /*Set to: 1 for Custom Font, 0.65 for Avenir.*/
+    --lineHeightMult: 0.65;
+    /*Set to: 1 for original design, 0.5 for new design.*/
+    --paddingMult: 0.5;
+}
+
+/*Avenir settings.*/
+:root {
+    --fontSizeMult: 0.8;
+    --lineHeightMult: 0.65;
+    --paddingMult: 0.5;
 }
 
 @font-face {
     font-family: shapel;
-    /*src: url(Avenir_Next.ttf);*/
-    src: url(Shapel1Longer-Regular.ttf);
+    src: url(Avenir_Next.ttf);
 }
+
+/*Custom Shapel font settings.
+:root {
+    --fontSizeMult: 1;
+    --lineHeightMult: 1;
+    --paddingMult: 1;
+}
+
+@font-face {
+    font-family: shapel;
+    src: url(Shapel1Longer-Regular.ttf);
+}*/
 
 html, body {
     height: 100%;
@@ -134,74 +164,77 @@ header {
     border-radius: 4px;
     text-transform: lowercase;
     font-family: shapel;
-    line-height: calc(4.5vh * var(--fontSizeMult));
+    line-height: calc(4.5vh * var(--lineHeightMult));
 
     display: flex;
     justify-content: center;
     align-content: center;
 }
 
-.small, .logo-small {
+.small {
     background-color: var(--smallCol);
-    margin-top: 4vh;
-    margin-bottom: 4vh;
+    margin-top: calc(4vh * var(--paddingMult));
+    margin-bottom: calc(4vh * var(--paddingMult));
 }
 
-.high, .logo-high {
+.high {
     background-color: var(--highCol);
-    padding-top: 4vh;
-    margin-bottom: 4vh;
+    padding-top: calc(4vh * var(--paddingMult));
+    margin-bottom: calc(4vh * var(--paddingMult));
 }
 
-.low, .logo-low {
+.low {
     background-color: var(--lowCol);
-    margin-top: 4vh;
-    padding-bottom: 4vh;
+    margin-top: calc(4vh * var(--paddingMult));
+    padding-bottom: calc(4vh * var(--paddingMult));
 }
 
 /* If the width is greater than the height (i.e. landscape). */
 @media (min-width:100vh) {
     .small, .high, .low {
         font-size: calc(8vh * var(--fontSizeMult));
-        line-height: 5.5vh;
+        line-height: calc(5.5vh * var(--lineHeightMult));
         width: 5vh;
         height: 5vh;
     }
 
     .small {
-        margin-top: 5vh;
-        margin-bottom: 5vh;
+        margin-top: calc(5vh * var(--paddingMult));
+        margin-bottom: calc(5vh * var(--paddingMult));
     }
     .high {
-        padding-top: 5vh;
-        margin-bottom: 5vh;
+        padding-top: calc(5vh * var(--paddingMult));
+        margin-bottom: calc(5vh * var(--paddingMult));
     }
     .low {
-        margin-top: 5vh;
-        padding-bottom: 5vh;
+        margin-top: calc(5vh * var(--paddingMult));
+        padding-bottom: calc(5vh * var(--paddingMult));
     }
 }
 
 .logo-small, .logo-low, .logo-high {
-    line-height: 3.5vh;
+    line-height: calc(3.5vh * var(--lineHeightMult));
     width: 3vh;
     height: 3vh;
-    font-size: calc(5vh * var(--fontSizeMult));
+    font-size: calc(5vh * var(--paddingMult));
 }
 
 .logo-small {
-    margin-top: 3vh;
-    margin-bottom: 3vh;
+    background-color: var(--smallCol);
+    margin-top: calc(3vh * var(--paddingMult));
+    margin-bottom: calc(3vh * var(--paddingMult));
 }
 
 .logo-high {
-    padding-top: 3vh;
-    margin-bottom: 3vh;
+    background-color: var(--highCol);
+    padding-top: calc(3vh * var(--paddingMult));
+    margin-bottom: calc(3vh * var(--paddingMult));
 }
 
 .logo-low {
-    margin-top: 3vh;
-    padding-bottom: 3vh;
+    background-color: var(--lowCol);
+    margin-top: calc(3vh * var(--paddingMult));
+    padding-bottom: calc(3vh * var(--paddingMult));
 }
 
 #phone-kb, #desktop-kb {
@@ -263,7 +296,7 @@ header {
     height: 8vh;
     width: 5vh;
     padding-bottom: 1vh;
-    line-height: 4vh;
+    line-height: calc(4vh * var(--lineHeightMult));
 }
 
 .keyboard-row button.delete-button, .keyboard-row button.submit-button {
@@ -434,6 +467,7 @@ button.post-game {
     padding-top: 1vh;
     padding-bottom: 1vh;
     font-size: calc(2vh * var(--fontSizeMult));;
+    color: var(--scoreTextCol);
 }
 
 .spacer-half {
