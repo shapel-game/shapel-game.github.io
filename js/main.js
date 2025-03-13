@@ -260,25 +260,21 @@ document.addEventListener("DOMContentLoaded", () => {
         return correctnessArr;
     }
 
-    function getTileColour(correctness) {
+    function getCorrectnessClass(correctness) {
 
         if (correctness === "NotInWord") {
-            return "rgb(204, 183, 174)"
+            return ""
         }
         
         if (correctness === "RightPlace") {
-            return "rgb(90, 255, 21)";
+            return "rightPlaceCol";
         }
 
         if (correctness == "WrongPlace") {
-            return "rgb(255, 209, 102)";
+            return "wrongPlaceCol";
         }
 
-        if (correctness == "Fail") {
-            return "rgb(255, 59, 83)";
-        }
-
-        return "rgb(129, 131, 132);";
+        return "";
     }
 
     function updateCorrectness(currentCorrectness, newCorrectness) {
@@ -436,8 +432,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const letterEl = document.getElementById(letterId);
             setTimeout(() => {
                 letterEl.classList.add("animate__flipInX");
-                const tileColour = getTileColour("RightPlace");
-                letterEl.style = `background-color:${tileColour};`;
+                letterEl.classList.add(getCorrectnessClass("RightPlace"));
+                //const tileColour = getCorrectnessClass("RightPlace");
+                //letterEl.style = `background-color:${tileColour};`;
 
             }, interval * index)
         });
@@ -470,7 +467,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (showCorrect === false && correctness === "RightPlace") {
                         correctness = "WrongPlace";
                     }
-                    const tileColour = getTileColour(correctness);
+                    letterEl.classList.add(getCorrectnessClass(correctness));
                     letterEl.style = `background-color:${tileColour};`;
                 }
 

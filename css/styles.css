@@ -5,8 +5,28 @@
     text-align: center;
 }
 
+:root {
+    --smallCol: #9181FD;
+    --highCol:  #5EBE74;
+    --lowCol: #4AC0F4;
+    --correctCol: #F9EB32;
+    --answerCol: #F9EB32;
+    --deleteCol: #FF522A;
+    --submitCol: #A0F03C;
+    --infoCol: #f7a9a8;
+    --infoBoxCol: #f3dad8;
+    --infoBoxCloseCol: #a3a3a3;
+    --infoBoxCloseHoverCol: #000000;
+    --backgroundCol: #000000;
+    --outlineCol: #3a3a3c;
+    --textCol: #182825;
+    --scoreTextCol: #e4f0ee;
+    --fontSizeMult: 1;
+}
+
 @font-face {
     font-family: shapel;
+    /*src: url(Avenir_Next.ttf);*/
     src: url(Shapel1Longer-Regular.ttf);
 }
 
@@ -14,7 +34,7 @@ html, body {
     height: 100%;
     font-family: "Lucida Sans", "Lucida Sans Regular", 'Lucida Grande', 
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: rgb(198, 236, 154);
+    background-color: var(--backgroundCol);
 }
 
 #container {
@@ -37,7 +57,7 @@ html, body {
 header {
     margin-top: 2vh;
     height: 12vh;
-    border-bottom: 1px solid rgb(58, 58, 60);
+    border-bottom: 1px solid var(--outlineCol);
 }
 
 .title-container {
@@ -76,7 +96,7 @@ header {
     justify-content: top;
     align-items: top;
     overflow: hidden;
-    border-top: 1px solid rgb(58, 58, 60);
+    border-top: 1px solid var(--outlineCol);
     padding-top: 1vh;
 }
 
@@ -108,13 +128,13 @@ header {
 .small, .high, .low, .logo-small, .logo-low, .logo-high {
     width: 4vh;
     height: 4vh;
-    font-size: 7vh;
-    color: rgb(24, 40, 37);
-    border: 2px solid rgb(58, 58, 60);
+    font-size: calc(7vh * var(--fontSizeMult));
+    color: var(--textCol);
+    border: 2px solid var(--outlineCol);
     border-radius: 4px;
     text-transform: lowercase;
     font-family: shapel;
-    line-height: 4.5vh;
+    line-height: calc(4.5vh * var(--fontSizeMult));
 
     display: flex;
     justify-content: center;
@@ -122,19 +142,19 @@ header {
 }
 
 .small, .logo-small {
-    background-color: rgb(15, 230, 222);
+    background-color: var(--smallCol);
     margin-top: 4vh;
     margin-bottom: 4vh;
 }
 
 .high, .logo-high {
-    background-color: rgb(243, 23, 209);
+    background-color: var(--highCol);
     padding-top: 4vh;
     margin-bottom: 4vh;
 }
 
 .low, .logo-low {
-    background-color: rgb(147, 105, 213);
+    background-color: var(--lowCol);
     margin-top: 4vh;
     padding-bottom: 4vh;
 }
@@ -142,7 +162,7 @@ header {
 /* If the width is greater than the height (i.e. landscape). */
 @media (min-width:100vh) {
     .small, .high, .low {
-        font-size: 8vh;
+        font-size: calc(8vh * var(--fontSizeMult));
         line-height: 5.5vh;
         width: 5vh;
         height: 5vh;
@@ -166,7 +186,7 @@ header {
     line-height: 3.5vh;
     width: 3vh;
     height: 3vh;
-    font-size: 5vh;
+    font-size: calc(5vh * var(--fontSizeMult));
 }
 
 .logo-small {
@@ -185,7 +205,7 @@ header {
 }
 
 #phone-kb, #desktop-kb {
-    border-top: 1px solid rgb(58, 58, 60);
+    border-top: 1px solid var(--outlineCol);
     padding-top: 3vh;
     height: 20vh;
     position: relative;
@@ -210,9 +230,9 @@ header {
 
 .keyboard-row button {
     font-family: shapel;
-    font-size: 4.5vh;
+    font-size: calc(4.5vh * var(--fontSizeMult));
     font-weight: 200;
-    border: 2px solid rgb(58, 58, 60);
+    border: 2px solid var(--outlineCol);
     cursor: pointer;
     text-transform: lowercase;
     margin-left: 0.3vh;
@@ -222,24 +242,24 @@ header {
 }
 
 .small-button {
-    background-color: rgb(15, 230, 222);
-    color: rgb(24, 40, 37);
+    background-color: var(--smallCol);
+    color: var(--textCol);
     height: 5vh;
     width: 5vh;
     line-height: 0;
 }
 
 .high-button {
-    background-color: rgb(243, 23, 209);
-    color: rgb(24, 40, 37);
+    background-color: var(--highCol);
+    color: var(--textCol);
     height: 8vh;
     width: 5vh;
     padding-top: 1vh;
 }
 
 .low-button {
-    background-color: rgb(147, 105, 213);
-    color: rgb(24, 40, 37);
+    background-color: var(--lowCol);
+    color: var(--textCol);
     height: 8vh;
     width: 5vh;
     padding-bottom: 1vh;
@@ -257,18 +277,18 @@ header {
 
 .keyboard-row button.delete-button {
     background-image: url(images/NewDelete.png);
-    background-color: rgb(255, 59, 83);
+    background-color: var(--deleteCol);
 }
 
 .keyboard-row button.submit-button {
     background-image: url(images/NewSubmit.png);
-    background-color: rgb(0, 245, 0);
+    background-color: var(--submitCol);
 }
 
 button.post-game {
-    background-color: rgb(247, 169, 168);
+    background-color: var(--infoCol);
     display: block;
-    border: 2px solid rgb(58, 58, 60);
+    border: 2px solid var(--outlineCol);
     cursor: pointer;
     margin-left: 3vh;
     margin-right: 3vh;
@@ -277,7 +297,8 @@ button.post-game {
 }
 
 .game-stats {
-    font-size: 2.5vh;
+    font-size: calc(2.5vh * var(--fontSizeMult));
+    color: var(--scoreTextCol);
 }
 
 .info-container {
@@ -286,14 +307,14 @@ button.post-game {
 }
 
 #info-button {
-    background-color: rgb(247, 169, 168);
+    background-color: var(--infoCol);
     /* font-family: shapel; */
     height: 4vh;
     width: 4vh;
-    font-size: 3vh;
+    font-size: calc(3vh * var(--fontSizeMult));
     font-weight: 200;
     font-style: bold;
-    border: 2px solid rgb(58, 58, 60);
+    border: 2px solid var(--outlineCol);
     cursor: pointer;
     text-transform: lowercase;
     padding-left: 0.3vh;
@@ -322,7 +343,7 @@ button.post-game {
 
 .info-box-content {
     text-align: center;
-    background-color: rgb(243, 218, 216);
+    background-color: #f3dad8;
     border-radius: 4px;
     max-width: min(80vh, 80vw);
     margin: auto; /* 5vh; */
@@ -344,58 +365,81 @@ button.post-game {
 }
 
 .info-box-content li {
-    font-size: min(2vh, 4vw);
+    font-size: min(calc(2vh * var(--fontSizeMult)), calc(4vw * var(--fontSizeMult)));
 }
 
 .info-box-content h3 {
-    font-size: min(3vh, 6vw);
+    font-size: min(calc(3vh * var(--fontSizeMult)), calc(6vw * var(--fontSizeMult)));
 }
 
 .info-box-content p {
-    font-size: min(2.5vh, 5vw);
+    font-size: min(calc(2.5vh * var(--fontSizeMult)), calc(5vw * var(--fontSizeMult)));
 }
 
 
 /* The Close Button */
 .close {
-    color: #aaaaaa;
+    color: var(--infoBoxCloseCol);
     float: right;
-    font-size: 28px;
+    font-size: 2vh;
     font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: #000;
+    color: var(--infoBoxCloseHoverCol);
     text-decoration: none;
     cursor: pointer;
 }
 
+.wrongPlaceCol {
+    background-color: var(--correctCol);
+}
+
+.rightPlaceCol {
+    background-color: var(--correctCol);
+}
+
+.smallCol {
+    background-color: var(--smallCol);
+}
+
+.highCol {
+    background-color: var(--highCol);
+}
+
+.lowCol {
+    background-color: var(--lowCol);
+}
+
+.answerCol {
+    background-color: var(--correctCol);
+}
 
 #WrongPlace {
-    background-color: rgb(255, 209, 102);
+    background-color: var(--correctCol);
 }
 
 #RightPlace {
-    background-color: rgb(255, 209, 102);
+    background-color: var(--correctCol);
 }
 
 #NotInWord {
-    background-color: rgb(205, 245, 165);
-    color: rgb(190, 230, 150);
-    border: rgb(190, 230, 150);
+    background-color: var(--backgroundCol);
+    color: var(--backgroundCol);
+    border: var(--backgroundCol);
 }
 
 #word-stats {
     padding-top: 1vh;
     padding-bottom: 1vh;
-    font-size: 2vh;
+    font-size: calc(2vh * var(--fontSizeMult));;
 }
 
 .spacer-half {
     flex-grow: 0;
-    border: 0.2vh solid rgb(58, 58, 60);
-    background-color: rgb(58, 58, 60);
+    border: 0.2vh solid var(--outlineCol);
+    background-color: var(--outlineCol);
     margin-right: 0.6vh;
 }
 
