@@ -42,17 +42,6 @@
     src: url(Avenir_Next.ttf);
 }
 
-/*Thin Lines and Curves font settings.*/
-:root {
-    --fontSizeMult: 0.8;
-    --lineHeightMult: 0.65;
-    --paddingMult: 0.75;
-}
-@font-face {
-    font-family: shapel;
-    src: url(ThinLinesAndCurves.ttf);
-}
-
 /*Custom Shapel font settings.*/
 :root {
     --fontSizeMult: 1;
@@ -62,6 +51,17 @@
 @font-face {
     font-family: shapel;
     src: url(Shapel1Longer-Regular.ttf);
+}
+
+/*Thin Lines and Curves font settings.*/
+:root {
+    --fontSizeMult: 0.75;
+    --lineHeightMult: 1;
+    --paddingMult: 0.75;
+}
+@font-face {
+    font-family: shapel;
+    src: url(ThinLinesandCurves-Long.otf);
 }
 
 html, body {
