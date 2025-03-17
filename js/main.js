@@ -432,10 +432,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const letterEl = document.getElementById(letterId);
             setTimeout(() => {
                 letterEl.classList.add("animate__flipInX");
-                letterEl.classList.add(getCorrectnessClass("RightPlace"));
-                //const tileColour = getCorrectnessClass("RightPlace");
-                //letterEl.style = `background-color:${tileColour};`;
-
+                letterEl.classList.add("answerCol");
             }, interval * index)
         });
 

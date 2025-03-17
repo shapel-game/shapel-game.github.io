@@ -17,7 +17,7 @@
     --highCol:  #5EBE74;
     --lowCol: #4AC0F4;
     --correctCol: #F9EB32;
-    --answerCol: #F9EB32;
+    --answerCol: #A0F03C;
     --deleteCol: #FF522A;
     --submitCol: #A0F03C;
     --infoCol: #f7a9a8;
@@ -25,15 +25,10 @@
     --infoBoxCloseCol: #a3a3a3;
     --infoBoxCloseHoverCol: #000000;
     --backgroundCol: #000000;
-    --outlineCol: #3a3a3c;
+    --lineCol: #3a3a3c;
+    --outlineCol: #000000;
     --textCol: #182825;
     --scoreTextCol: #e4f0ee;
-    /*Set to: 1 for Custom Font, 0.8 for Avenir.*/
-    --fontSizeMult: 0.8;
-    /*Set to: 1 for Custom Font, 0.65 for Avenir.*/
-    --lineHeightMult: 0.65;
-    /*Set to: 1 for original design, 0.5 for new design.*/
-    --paddingMult: 0.5;
 }
 
 /*Avenir settings.*/
@@ -42,23 +37,32 @@
     --lineHeightMult: 0.65;
     --paddingMult: 0.5;
 }
-
 @font-face {
     font-family: shapel;
     src: url(Avenir_Next.ttf);
 }
 
-/*Custom Shapel font settings.
+/*Thin Lines and Curves font settings.*/
+:root {
+    --fontSizeMult: 0.8;
+    --lineHeightMult: 0.65;
+    --paddingMult: 0.75;
+}
+@font-face {
+    font-family: shapel;
+    src: url(ThinLinesAndCurves.ttf);
+}
+
+/*Custom Shapel font settings.*/
 :root {
     --fontSizeMult: 1;
     --lineHeightMult: 1;
     --paddingMult: 1;
 }
-
 @font-face {
     font-family: shapel;
     src: url(Shapel1Longer-Regular.ttf);
-}*/
+}
 
 html, body {
     height: 100%;
@@ -87,7 +91,7 @@ html, body {
 header {
     margin-top: 2vh;
     height: 12vh;
-    border-bottom: 1px solid var(--outlineCol);
+    border-bottom: 1px solid var(--lineCol);
 }
 
 .title-container {
@@ -126,7 +130,7 @@ header {
     justify-content: top;
     align-items: top;
     overflow: hidden;
-    border-top: 1px solid var(--outlineCol);
+    border-top: 1px solid var(--lineCol);
     padding-top: 1vh;
 }
 
@@ -238,7 +242,7 @@ header {
 }
 
 #phone-kb, #desktop-kb {
-    border-top: 1px solid var(--outlineCol);
+    border-top: 1px solid var(--lineCol);
     padding-top: 3vh;
     height: 20vh;
     position: relative;
@@ -446,7 +450,7 @@ button.post-game {
 }
 
 .answerCol {
-    background-color: var(--correctCol);
+    background-color: var(--answerCol);
 }
 
 #WrongPlace {
