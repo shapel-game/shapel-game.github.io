@@ -465,7 +465,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         correctness = "WrongPlace";
                     }
                     letterEl.classList.add(getCorrectnessClass(correctness));
-                    letterEl.style = `background-color:${tileColour};`;
                 }
 
             }, interval * index)
