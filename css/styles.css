@@ -1,7 +1,6 @@
 @font-face {
     font-family: info;
     src: url(Avenir_Next.ttf);
-    /*src: url(Shapel1Longer-Regular.ttf);*/
 }
 
 * {
@@ -31,36 +30,6 @@
     --scoreTextCol: #e4f0ee;
 }
 
-/*Avenir settings.*/
-:root {
-    --fontSizeMult: 0.8;
-    --lineHeightMult: 0.65;
-    --paddingMult: 0.5;
-}
-@font-face {
-    font-family: shapel;
-    src: url(Avenir_Next.ttf);
-}
-@font-face {
-    font-family: shapel-buttons;
-    src: url(Avenir_Next.ttf);
-}
-
-/*Custom Shapel font settings.*/
-:root {
-    --fontSizeMult: 1;
-    --lineHeightMult: 1;
-    --paddingMult: 1;
-}
-@font-face {
-    font-family: shapel;
-    src: url(Shapel1Longer-Regular.ttf);
-}
-@font-face {
-    font-family: shapel-buttons;
-    src: url(Shapel1Longer-Regular.ttf);
-}
-
 /*Thin Lines and Curves font settings.*/
 :root {
     --fontSizeMult: 0.75;
@@ -69,10 +38,7 @@
 }
 @font-face {
     font-family: shapel;
-    src: url(ThinLinesandCurves-long.otf);
-}
-@font-face {
-    font-family: shapel-buttons;
+    font-weight: 400;
     src: url(ThinLinesandCurves-Long.otf);
 }
 
@@ -278,9 +244,9 @@ header {
 }
 
 .keyboard-row button {
-    font-family: shapel-buttons;
+    font-family: shapel;
     font-size: calc(5.5vh * var(--fontSizeMult));
-    font-weight: 200;
+    font-weight: 600;
     border: 2px solid var(--outlineCol);
     cursor: pointer;
     text-transform: lowercase;
@@ -357,7 +323,6 @@ button.post-game {
 
 #info-button {
     background-color: var(--infoCol);
-    /* font-family: shapel; */
     height: 4vh;
     width: 4vh;
     font-size: calc(3vh * var(--fontSizeMult));
