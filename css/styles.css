@@ -42,9 +42,19 @@
     src: url(ThickLinesandCurves.otf);
 }
 @font-face {
+    font-family: shapel;
+    font-weight: 800;
+    src: url(ThickLinesandCurves-ExtraBold.otf);
+}
+@font-face {
     font-family: shapel-buttons;
     font-weight: 600;
     src: url(ThickLinesAndCurves-Buttons.otf);
+}
+@font-face {
+    font-family: shapel-buttons;
+    font-weight: 800;
+    src: url(ThickLinesAndCurves-Buttons-ExtraBold.otf);
 }
 
 html, body {
@@ -151,7 +161,7 @@ header {
     border-radius: 4px;
     text-transform: lowercase;
     font-family: shapel;
-    font-weight: 600;
+    font-weight: 800;
     line-height: calc(4.5vh * var(--lineHeightMult));
 
     display: flex;
@@ -258,7 +268,7 @@ header {
 .keyboard-row button {
     font-family: shapel-buttons;
     font-size: calc(5.5vh * var(--fontSizeMult));
-    font-weight: 600;
+    font-weight: 800;
     border: 2px solid var(--outlineCol);
     cursor: pointer;
     text-transform: lowercase;
