@@ -5,7 +5,6 @@ import { letterShapeCodes, letterShapes } from "./letter_shapes.js"
 document.addEventListener("DOMContentLoaded", () => {
     var pageName = (window.location.pathname).split("/").pop();
     pageName = pageName.split(".html")[0];
-    console.log(pageName);
 
     //Get a list of keys (buttons within an element with the 'keyboard-row' class)
     const keys = document.querySelectorAll('.keyboard-row button')
@@ -52,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadData();
 
     function chooseWord() {
-        analyseWords();
+        //analyseWords();
 
         if (randomWord) {
             const randIndex = Math.floor(Math.random() * allWordsList.length);
@@ -100,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             codeDict[code].push(word);
         }
-
+        
         if (printShapeDistributions) {
             for (const key of Object.keys(codeDict)) {
                 //console.log(`${key}= ${codeDict[key].length} ${codeDict[key]}`);
@@ -349,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const correctnessArr = getWordCorrectness(currentWordArr);
         updateKeyboard(currentWord, correctnessArr);
         
-        console.log(guessedLetters);
+        //console.log(guessedLetters);
 
         
         if (saveLoadGuesses) {

@@ -49,12 +49,12 @@
 @font-face {
     font-family: shapel-buttons;
     font-weight: 600;
-    src: url(ThickLinesAndCurvesButtons.otf);
+    src: url(ThickLinesandCurvesButtons.otf);
 }
 @font-face {
     font-family: shapel-buttons;
     font-weight: 800;
-    src: url(ThickLinesAndCurvesButtons-ExtraBold.otf);
+    src: url(ThickLinesandCurvesButtons-ExtraBold.otf);
 }
 
 html, body {
