@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadData();
 
     function chooseWord() {
-        //analyseWords();
+        analyseWords();
 
         if (randomWord) {
             const randIndex = Math.floor(Math.random() * allWordsList.length);
@@ -100,12 +100,14 @@ document.addEventListener("DOMContentLoaded", () => {
             codeDict[code].push(word);
         }
         
+        /*
         if (printShapeDistributions) {
             for (const key of Object.keys(codeDict)) {
                 //console.log(`${key}= ${codeDict[key].length} ${codeDict[key]}`);
                 console.log(`${codeDict[key].length}: ${codeDict[key]}`);
             }
         }
+        */
     }
 
     function getDay() {
