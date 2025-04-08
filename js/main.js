@@ -223,6 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nextSpace = nextSpace + 1;
 
             availableSpaceEl.textContent = letter;
+            availableSpaceEl.classList.add("safariUpdater");
         }
     }
 
@@ -549,6 +550,7 @@ document.addEventListener("DOMContentLoaded", () => {
         guessedLetters[guessedLetters.length - 1] = currentWordArr;
         const deletedLetterEl = document.getElementById(String(nextSpace - 1));
         deletedLetterEl.textContent = "";
+        deletedLetterEl.classList.remove("safariUpdater");
         nextSpace -= 1;
     }
 
