@@ -438,12 +438,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }, interval * index)
         });
 
-        let endMessage = "hurray";
+        let endMessage = "error";
         if (score === 4) {
-            endMessage = "superb";
+            endMessage = "unreal";
         }
         else if (score === 3) {
-            endMessage = "huzzah"
+            endMessage = "woohoo"
         }
         else if (score === 2) {
             endMessage = "hooray";
