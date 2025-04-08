@@ -452,6 +452,10 @@ button.post-game {
     background-color: var(--answerCol);
 }
 
+.safariUpdater {
+    transform: scale(1.0000001);
+}
+
 #WrongPlace {
     background-color: var(--correctCol);
 }
