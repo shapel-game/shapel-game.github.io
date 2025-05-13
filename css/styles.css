@@ -19,8 +19,8 @@
     --answerCol: #A0F03C;
     --deleteCol: #FF522A;
     --submitCol: #A0F03C;
-    --infoCol: #f7a9a8;
-    --infoBoxCol: #f3dad8;
+    --infoCol: #e4f0ee;/* #f7a9a8; */
+    --infoBoxCol: #e4f0ee;/* #f3dad8; */
     --infoBoxCloseCol: #a3a3a3;
     --infoBoxCloseHoverCol: #000000;
     --backgroundCol: #000000;
@@ -380,9 +380,9 @@ button.post-game {
 }
 
 #info-button {
-    background-color: var(--infoCol);
-    height: 4vh;
-    width: 4vh;
+    background-color: transparent;/* var(--infoCol); */
+    height: 6vh;
+    width: 6vh;
     font-size: calc(3vh * var(--fontSizeMult));
     font-weight: 400;
     font-style: bold;
@@ -397,6 +397,10 @@ button.post-game {
     border-radius: 4px;
     user-select: none;
     float: right;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(images/Info.png);
 }
 
 .info-box {
@@ -415,7 +419,7 @@ button.post-game {
 
 .info-box-content {
     text-align: center;
-    background-color: #f3dad8;
+    background-color: var(--infoBoxCol);
     border-radius: 4px;
     max-width: min(80vh, 80vw);
     margin: auto; /* 5vh; */
