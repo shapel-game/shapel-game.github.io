@@ -103,7 +103,15 @@ header {
     padding-bottom: 1vh;
 }
 
-#board, #results-grid {
+#board {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 2vh;
+    grid-column-gap: 0.5vh;
+    box-sizing: border-box;
+}
+
+.board-row, #results-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-row-gap: 2vh;
@@ -129,7 +137,7 @@ header {
 
 #stats {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     height: 10vh;
     justify-content: top;
     align-items: top;
@@ -211,7 +219,7 @@ header {
 }
 
 .logo-image {
-    height: 12vh;
+    height: 9vh;
     justify-content: center;
     align-content: center;
 }
@@ -336,6 +344,34 @@ button.post-game {
 .game-stats {
     font-size: calc(2.5vh * var(--fontSizeMult));
     color: var(--scoreTextCol);
+}
+
+.points-adder {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    margin-top: 4vh;
+    opacity: 0;
+    color: var(--scoreTextCol);
+    animation-name: points-anim;
+    animation-duration: 3s;
+}
+@keyframes points-anim {
+    0%   {margin-top: 0vh; opacity: 1;}
+    30%  {margin-top: -4vh; opacity: 1;}
+    50%  {margin-top: -4vh; opacity: 1;}
+    100%  {margin-top: 8vh; opacity: 0;}
+}
+@keyframes points-anim1 {
+    0%   {margin-top: 0vh; opacity: 1;}
+    50%  {margin-top: -4vh; opacity: 1;}
+    100%  {margin-top: 40vh; opacity: 0;}
+}
+
+.fireworks-holder {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
 }
 
 .info-container {

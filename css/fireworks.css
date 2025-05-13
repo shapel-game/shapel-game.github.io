@@ -1,0 +1,192 @@
+:root {
+    --scale: 0.1;
+    --dur: 2;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  overflow: hidden; }
+
+.pyro > .before, .pyro > .after {
+  position: absolute;
+  width: calc(5vh * var(--scale));
+  height: calc(5vh * var(--scale));
+  border-radius: 50%;
+  box-shadow: calc(-120vh * var(--scale)) calc(-218.66667vh * var(--scale)) blue, calc(248vh * var(--scale)) calc(-16.66667vh * var(--scale)) #00ff84, calc(190vh * var(--scale)) calc(16.33333vh * var(--scale)) #002bff, calc(-113vh * var(--scale)) calc(-308.66667vh * var(--scale)) #ff009d, calc(-109vh * var(--scale)) calc(-287.66667vh * var(--scale)) #ffb300, calc(-50vh * var(--scale)) calc(-313.66667vh * var(--scale)) #ff006e, calc(226vh * var(--scale)) calc(-31.66667vh * var(--scale)) #ff4000, calc(180vh * var(--scale)) calc(-351.66667vh * var(--scale)) #ff00d0, calc(-12vh * var(--scale)) calc(-338.66667vh * var(--scale)) #00f6ff, calc(220vh * var(--scale)) calc(-388.66667vh * var(--scale)) #99ff00, calc(-69vh * var(--scale)) calc(-27.66667vh * var(--scale)) #ff0400, calc(-111vh * var(--scale)) calc(-339.66667vh * var(--scale)) #6200ff, calc(155vh * var(--scale)) calc(-237.66667vh * var(--scale)) #00ddff, calc(-152vh * var(--scale)) calc(-380.66667vh * var(--scale)) #00ffd0, calc(-50vh * var(--scale)) calc(-37.66667vh * var(--scale)) #00ffdd, calc(-95vh * var(--scale)) calc(-175.66667vh * var(--scale)) #a6ff00, calc(-88vh * var(--scale)) calc(10.33333vh * var(--scale)) #0d00ff, calc(112vh * var(--scale)) calc(-309.66667vh * var(--scale)) #005eff, calc(69vh * var(--scale)) calc(-415.66667vh * var(--scale)) #ff00a6, calc(168vh * var(--scale)) calc(-100.66667vh * var(--scale)) #ff004c, calc(-244vh * var(--scale)) calc(24.33333vh * var(--scale)) #ff6600, calc(97vh * var(--scale)) calc(-325.66667vh * var(--scale)) #ff0066, calc(-211vh * var(--scale)) calc(-182.66667vh * var(--scale)) #00ffa2, calc(236vh * var(--scale)) calc(-126.66667vh * var(--scale)) #b700ff, calc(140vh * var(--scale)) calc(-196.66667vh * var(--scale)) #9000ff, calc(125vh * var(--scale)) calc(-175.66667vh * var(--scale)) #00bbff, calc(118vh * var(--scale)) calc(-381.66667vh * var(--scale)) #ff002f, calc(144vh * var(--scale)) calc(-111.66667vh * var(--scale)) #ffae00, calc(36vh * var(--scale)) calc(-78.66667vh * var(--scale)) #f600ff, calc(-63vh * var(--scale)) calc(-196.66667vh * var(--scale)) #c800ff, calc(-218vh * var(--scale)) calc(-227.66667vh * var(--scale)) #d4ff00, calc(-134vh * var(--scale)) calc(-377.66667vh * var(--scale)) #ea00ff, calc(-36vh * var(--scale)) calc(-412.66667vh * var(--scale)) #ff00d4, calc(209vh * var(--scale)) calc(-106.66667vh * var(--scale)) #00fff2, calc(91vh * var(--scale)) calc(-278.66667vh * var(--scale)) #000dff, calc(-22vh * var(--scale)) calc(-191.66667vh * var(--scale)) #9dff00, calc(139vh * var(--scale)) calc(-392.66667vh * var(--scale)) #a6ff00, calc(56vh * var(--scale)) calc(-2.66667vh * var(--scale)) #0099ff, calc(-156vh * var(--scale)) calc(-276.66667vh * var(--scale)) #ea00ff, calc(-163vh * var(--scale)) calc(-233.66667vh * var(--scale)) #00fffb, calc(-238vh * var(--scale)) calc(-346.66667vh * var(--scale)) #00ff73, calc(62vh * var(--scale)) calc(-363.66667vh * var(--scale)) #0088ff, calc(244vh * var(--scale)) calc(-170.66667vh * var(--scale)) #0062ff, calc(224vh * var(--scale)) calc(-142.66667vh * var(--scale)) #b300ff, calc(141vh * var(--scale)) calc(-208.66667vh * var(--scale)) #9000ff, calc(211vh * var(--scale)) calc(-285.66667vh * var(--scale)) #ff6600, calc(181vh * var(--scale)) calc(-128.66667vh * var(--scale)) #1e00ff, calc(90vh * var(--scale)) calc(-123.66667vh * var(--scale)) #c800ff, calc(189vh * var(--scale)) calc(70.33333vh * var(--scale)) #00ffc8, calc(-18vh * var(--scale)) calc(-383.66667vh * var(--scale)) #00ff33, calc(100vh * var(--scale)) calc(-6.66667vh * var(--scale)) #ff008c;
+  -moz-animation: calc(1s * var(--dur)) bang ease-out 1 backwards, calc(1s * var(--dur)) gravity ease-in 1 backwards, calc(5s * var(--dur)) position linear 1 backwards;
+  -webkit-animation: calc(1s * var(--dur)) bang ease-out 1 backwards, calc(1s * var(--dur)) gravity ease-in 1 backwards, calc(5s * var(--dur)) position linear 1 backwards;
+  -o-animation: calc(1s * var(--dur)) bang ease-out 1 backwards, calc(1s * var(--dur)) gravity ease-in 1 backwards, calc(5s * var(--dur)) position linear 1 backwards;
+  -ms-animation: calc(1s * var(--dur)) bang ease-out 1 backwards, calc(1s * var(--dur)) gravity ease-in 1 backwards, calc(5s * var(--dur)) position linear 1 backwards;
+  animation: calc(1s * var(--dur)) bang ease-out 1 backwards, calc(1s * var(--dur)) gravity ease-in 1 backwards, calc(5s * var(--dur)) position linear 1 backwards;
+  opacity: 0;
+}
+
+.pyro > .after {
+  -moz-animation-delay: calc(1.25s * var(--dur)), calc(1.25s * var(--dur)), calc(1.25s * var(--dur));
+  -webkit-animation-delay: calc(1.25s * var(--dur)), calc(1.25s * var(--dur)), calc(1.25s * var(--dur));
+  -o-animation-delay: calc(1.25s * var(--dur)), calc(1.25s * var(--dur)), calc(1.25s * var(--dur));
+  -ms-animation-delay: calc(1.25s * var(--dur)), calc(1.25s * var(--dur)), calc(1.25s * var(--dur));
+  animation-delay: calc(1.25s * var(--dur)), calc(1.25s * var(--dur)), calc(1.25s * var(--dur));
+  -moz-animation-duration: calc(1.25s * var(--dur)), calc(1.25s * var(--dur)), calc(6.25s * var(--dur));
+  -webkit-animation-duration: calc(1.25s * var(--dur)), calc(1.25s * var(--dur)), calc(6.25s * var(--dur));
+  -o-animation-duration: calc(1.25s * var(--dur)), calc(1.25s * var(--dur)), calc(6.25s * var(--dur));
+  -ms-animation-duration: calc(1.25s * var(--dur)), calc(1.25s * var(--dur)), calc(6.25s * var(--dur));
+  animation-duration: calc(1.25s * var(--dur)), calc(1.25s * var(--dur)), calc(6.25s * var(--dur)); }
+
+@-webkit-keyframes bang {
+  from {
+    box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; opacity: 1;} }
+@-moz-keyframes bang {
+  from {
+    box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; opacity: 1 } }
+@-o-keyframes bang {
+  from {
+    box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; opacity: 1 } }
+@-ms-keyframes bang {
+  from {
+    box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; opacity: 1 } }
+@keyframes bang {
+  from {
+    box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; opacity: 1 } }
+@-webkit-keyframes gravity {
+  to {
+    transform: translateY(calc(200vh * var(--scale)));
+    -moz-transform: translateY(calc(200vh * var(--scale)));
+    -webkit-transform: translateY(calc(200vh * var(--scale)));
+    -o-transform: translateY(calc(200vh * var(--scale)));
+    -ms-transform: translateY(calc(200vh * var(--scale)));
+    opacity: 0; } }
+@-moz-keyframes gravity {
+  to {
+    transform: translateY(calc(200vh * var(--scale)));
+    -moz-transform: translateY(calc(200vh * var(--scale)));
+    -webkit-transform: translateY(calc(200vh * var(--scale)));
+    -o-transform: translateY(calc(200vh * var(--scale)));
+    -ms-transform: translateY(calc(200vh * var(--scale)));
+    opacity: 0; } }
+@-o-keyframes gravity {
+  to {
+    transform: translateY(calc(200vh * var(--scale)));
+    -moz-transform: translateY(calc(200vh * var(--scale)));
+    -webkit-transform: translateY(calc(200vh * var(--scale)));
+    -o-transform: translateY(calc(200vh * var(--scale)));
+    -ms-transform: translateY(calc(200vh * var(--scale)));
+    opacity: 0; } }
+@-ms-keyframes gravity {
+  to {
+    transform: translateY(calc(200vh * var(--scale)));
+    -moz-transform: translateY(calc(200vh * var(--scale)));
+    -webkit-transform: translateY(calc(200vh * var(--scale)));
+    -o-transform: translateY(calc(200vh * var(--scale)));
+    -ms-transform: translateY(calc(200vh * var(--scale)));
+    opacity: 0; } }
+@keyframes gravity {
+  to {
+    transform: translateY(calc(200vh * var(--scale)));
+    -moz-transform: translateY(calc(200vh * var(--scale)));
+    -webkit-transform: translateY(calc(200vh * var(--scale)));
+    -o-transform: translateY(calc(200vh * var(--scale)));
+    -ms-transform: translateY(calc(200vh * var(--scale)));
+    opacity: 0; } }
+@-webkit-keyframes position {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%; }
+
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%; }
+
+  40%, 59.9% {
+    margin-top: 20%;
+    margin-left: 70%; }
+
+  60%, 79.9% {
+    margin-top: 30%;
+    margin-left: 20%; }
+
+  80%, 99.9% {
+    margin-top: 30%;
+    margin-left: 80%; } }
+@-moz-keyframes position {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%; }
+
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%; }
+
+  40%, 59.9% {
+    margin-top: 20%;
+    margin-left: 70%; }
+
+  60%, 79.9% {
+    margin-top: 30%;
+    margin-left: 20%; }
+
+  80%, 99.9% {
+    margin-top: 30%;
+    margin-left: 80%; } }
+@-o-keyframes position {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%; }
+
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%; }
+
+  40%, 59.9% {
+    margin-top: 20%;
+    margin-left: 70%; }
+
+  60%, 79.9% {
+    margin-top: 30%;
+    margin-left: 20%; }
+
+  80%, 99.9% {
+    margin-top: 30%;
+    margin-left: 80%; } }
+@-ms-keyframes position {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%; }
+
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%; }
+
+  40%, 59.9% {
+    margin-top: 20%;
+    margin-left: 70%; }
+
+  60%, 79.9% {
+    margin-top: 30%;
+    margin-left: 20%; }
+
+  80%, 99.9% {
+    margin-top: 30%;
+    margin-left: 80%; } }
+@keyframes position {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%; }
+
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%; }
+
+  40%, 59.9% {
+    margin-top: 20%;
+    margin-left: 70%; }
+
+  60%, 79.9% {
+    margin-top: 30%;
+    margin-left: 20%; }
+
+  80%, 99.9% {
+    margin-top: 30%;
+    margin-left: 80%; } }
