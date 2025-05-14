@@ -82,8 +82,8 @@ html, body {
 }
 
 header {
-    margin-top: 2vh;
-    height: 12vh;
+    margin-top: 1.5vh;
+    height: 10vh;
     border-bottom: 1px solid var(--lineCol);
 }
 
@@ -119,10 +119,19 @@ header {
     box-sizing: border-box;
 }
 
+body {
+    overflow: scroll;
+}
+#container {
+    height: 105vh;
+}
+
 /* If the width is greater than the height (i.e. landscape). */
 @media (min-width:100vh) {
     #board-container {height: 55vh}
     #board {grid-row-gap: 3vh;}
+    body {overflow: hidden;}
+    #container {height: 100vh;}
 }
 
 #results {
