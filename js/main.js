@@ -374,12 +374,12 @@ document.addEventListener("DOMContentLoaded", () => {
             gameFinished = true;
             points = 0;
             let delay = 2.5
-            if (guessedWordCount == 0) {    //Correct in 1 guess
-                points += 1;
+            if (guessedWordCount <= 2) {    //Correct in 3 or less guesses
+                points += 2;
                 if (loading === false) {
                 }
-                    let row = document.getElementById('board-row1')
-                    pointAnimation(row, 50, delay, true) //HERE
+                    let row = document.getElementById('board-row3')
+                    pointAnimation(row, 100, delay, true) //HERE
                     delay += 1.5
             }
             if (guessedWordCount <= 1) {    //Correct in 2 or less guesses
@@ -390,12 +390,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     pointAnimation(row, 100, delay, true) //HERE
                     delay += 1.5
             }
-            if (guessedWordCount <= 2) {    //Correct in 3 or less guesses
-                points += 2;
+            if (guessedWordCount == 0) {    //Correct in 1 guess
+                points += 1;
                 if (loading === false) {
                 }
-                    let row = document.getElementById('board-row3')
-                    pointAnimation(row, 100, delay, true) //HERE
+                    let row = document.getElementById('board-row1')
+                    pointAnimation(row, 50, delay, true) //HERE
                     delay += 1.5
             }
             correctAnimation(points);
@@ -443,6 +443,16 @@ document.addEventListener("DOMContentLoaded", () => {
         var pointsDeleteDelay = 5;
 
         setTimeout(() => {
+            let pointsElem = document.createElement("div")
+            if (fireworks) {
+                pointsElem.classList.add("points-adder")
+            }
+            else {
+                pointsElem.classList.add("points-adder-wrong")
+            }
+            //pointsElem.setAttribute("animation-delay", `${delay}s`)
+            pointsElem.textContent = `+${value}pts`
+            startElement.appendChild(pointsElem)
             if (fireworks) {
                 let fireworksHolder = document.createElement("div")
                 fireworksHolder.classList.add("fireworks-holder")
@@ -451,17 +461,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>`
                 startElement.appendChild(fireworksHolder)
             }
-            let pointsElem = document.createElement("div")
-            pointsElem.classList.add("points-adder")
-            //pointsElem.setAttribute("animation-delay", `${delay}s`)
-            pointsElem.textContent = `+${value}pts`
-            startElement.appendChild(pointsElem)
             setTimeout(() => {
                 displayPoints += value
                 animatePointsTotal()
             }, pointsAddDelay*1000)
             setTimeout(() => {
-                pointsElem.remove();
+                //pointsElem.remove();
             }, pointsDeleteDelay*1000)
         }, delay*1000)
     }
@@ -590,7 +595,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span id="stats">
                     <div class="game-stats">Games played: ${numGames}</div>
                     <div class="game-stats" id="points-stat">Points: 0</div>
-                    <div class="game-stats">Average Points: ${gamePointAverage}pts</div>
+                    <div class="game-stats">Game Point Average: ${gamePointAverage}pts</div>
                 </span>`;
 
                 pointsText = document.getElementById("points-stat");
