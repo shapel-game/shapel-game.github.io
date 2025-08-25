@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let gameFinished = false;
     let loading = false;
-    const dayIndex = getDay();
+    let dayIndex = 0;
 
     if (pageName == "shapel-random.html" || pageName == "shapel-random") {
         randomWord = true;
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
             word = allWordsList[randIndex];
         }
         else {
-            //const day = getDay();
+            dayIndex = Math.abs(getDay()) % dailyWordsList.length;
             word = dailyWordsList[dayIndex];
         }
         wordShape = wordCode(word);
@@ -117,7 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function getDay() {
         var now = new Date();
-        var start = new Date(now.getFullYear(), 0, 0);
+        //var start = new Date(now.getFullYear(), 0, 0);
+        var start = new Date(2025, 7, 25);
         var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
         var oneDay = 1000 * 60 * 60 * 24;
         var day = Math.floor(diff / oneDay);
