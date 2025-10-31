@@ -399,7 +399,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     pointAnimation(row, 100, delay, true) //HERE
                     delay += 1.5
             }
-            correctAnimation(points);
+            correctAnimation(guessedWordCount + 1);
             if (loading === false) {
                 updateScore(points);
             }
@@ -514,7 +514,7 @@ document.addEventListener("DOMContentLoaded", () => {
         totalScore = updateValue("totalScore", points);
     }
 
-    function correctAnimation(score) {
+    function correctAnimation(guesses) {
         const firstLetterId = guessedWordCount * numLetters + 1;
 
         //Animate each letter to change into green, yellow or grey based on the correct word.
@@ -530,13 +530,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         let endMessage = "error";
-        if (score === 5) {
+        if (guesses === 1) {
             endMessage = "unreal";
         }
-        else if (score === 4) {
+        else if (guesses === 2) {
             endMessage = "woohoo"
         }
-        else if (score === 2) {
+        else if (guesses === 3) {
             endMessage = "hooray";
         }
         gameEndAnimation(endMessage);
