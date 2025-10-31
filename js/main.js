@@ -380,11 +380,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (loading === false) {
                 }
                     let row = document.getElementById('board-row3')
-                    pointAnimation(row, 100, delay, true) //HERE
+                    pointAnimation(row, 200, delay, true) //HERE
                     delay += 1.5
             }
             if (guessedWordCount <= 1) {    //Correct in 2 or less guesses
-                points += 2;
+                points += 1;
                 if (loading === false) {
                 }
                     let row = document.getElementById('board-row2')
@@ -396,7 +396,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (loading === false) {
                 }
                     let row = document.getElementById('board-row1')
-                    pointAnimation(row, 50, delay, true) //HERE
+                    pointAnimation(row, 100, delay, true) //HERE
                     delay += 1.5
             }
             correctAnimation(points);
@@ -415,7 +415,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                     let row = document.getElementById('board-row3')
                     let delay = 2.5
-                    pointAnimation(row, 50, delay, false) //HERE
+                    pointAnimation(row, 100, delay, false) //HERE
             }
             else {
                 points = 0;
@@ -579,7 +579,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 kb.classList.add("animate__animated");
                 kb.classList.add("animate__fadeOut");
             }
-            const gamePointAverage = Math.round((totalScore / numGames) * 50)
+            const gamePointAverage = Math.round((totalScore / numGames) * 100)
             setTimeout(() => {
                 section.innerHTML = "";
                 section.innerHTML = `
